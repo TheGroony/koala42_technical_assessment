@@ -1,0 +1,30 @@
+{
+  "name": "koala42",
+  "version": "1.0.0",
+  "description": "Technical assessment project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack --color --mode='production'"
+  },
+  "author": "Jiří Strzelecki",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "css-loader": "^6.10.0",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "mini-css-extract-plugin": "^2.8.0",
+    "postcss": "^8.4.34",
+    "postcss-loader": "^8.1.0",
+    "postcss-preset-env": "^9.3.0",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "sass-rem": "^4.0.0",
+    "style-loader": "^3.3.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

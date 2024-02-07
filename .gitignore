@@ -1,2 +1,5 @@
 config/local.neon
 vendor
+assets/node_modules
+.idea
+DS_Store

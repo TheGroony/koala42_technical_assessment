@@ -3,7 +3,6 @@ services:
 
 
 search:
-	-	in: %appDir%
-		classes:
-			- *Factory
-			- *Facade
+	Controls:
+		in: %appDir%/Controls/
+		classes: *ControlFactory
