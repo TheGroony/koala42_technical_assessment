@@ -1,56 +1,36 @@
 {templateType App\Controls\Monitor\MonitorControlTemplate}
+{varType App\Model\Api\Data\Measurement $item}
+
 <div class="container monitor__measurements mt-5 mt-xxl-5">
-	<div class="row mb-2">
-		<h2>Measurements</h2>
-	</div>
-	<table class="table table-dark table-hover table-borderless table-striped">
-		<thead>
-		<tr>
-			<th scope="col">Time</th>
-			<th scope="col">Temp.</th>
-			<th scope="col">PM10</th>
-			<th scope="col">PM25</th>
-			<th scope="col">CH20</th>
-			<th scope="col">CO2</th>
-			<th scope="col">Hum.</th>
-			<th scope="col">TVOC</th>
-			<th scope="col">HEX</th>
-		</tr>
-		</thead>
-		<tbody class="table-group-divider">
-		<tr>
-			<th scope="row">lorem</th>
-			<td>ipsum</td>
-			<td>ipsum</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>amet</td>
-			<td>amet</td>
-		</tr>
-		<tr>
-			<th scope="row">lorem</th>
-			<td>ipsum</td>
-			<td>ipsum</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>amet</td>
-			<td>amet</td>
-		</tr>
-		<tr>
-			<th scope="row">lorem</th>
-			<td>ipsum</td>
-			<td>ipsum</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>dolor</td>
-			<td>amet</td>
-			<td>amet</td>
-		</tr>
-		</tbody>
-	</table>
+    <div class="row mb-2">
+        <h2>Measurements</h2>
+    </div>
+    <table class="table table-dark table-hover table-borderless table-striped">
+        <thead class="table-light table-primary">
+        <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Temp.</th>
+            <th scope="col">PM10</th>
+            <th scope="col">PM2.5</th>
+            <th scope="col">CH20</th>
+            <th scope="col">CO2</th>
+            <th scope="col">Hum.</th>
+            <th scope="col">TVOC</th>
+            <th scope="col">HEX</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        <tr n:if="!empty($data)" n:foreach="$data as $item">
+            <th scope="row">{$item->date_created|date:"d. m. Y | H:i"}</th>
+            <td>{$item->temperature|round:3} °C</td>
+            <td>{$item->pm10} μg/m³</td>
+            <td>{$item->pm25} μg/m³</td>
+            <td>{$item->c2ho} µg/m³</td>
+            <td>{$item->co2} ppm</td>
+            <td>{$item->humidity|round:3} %</td>
+            <td>{$item->tvoc} ppb</td>
+            <td>{$item->HEX}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
